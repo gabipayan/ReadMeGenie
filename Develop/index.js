@@ -1,7 +1,8 @@
 // TODO: Include packages needed for this application
-// inquire package, i colors, 
+import { writeFile } from 'fs/promises';
 import inquirer from 'inquirer';    
 import colors from 'colors';
+import fs from 'fs';
 //import ListPrompt from 'inquirer/lib/prompts/list';
 
 // TODO: Create an array of questions for user input
@@ -14,10 +15,6 @@ const questions = [
         question: "Provide a description of your project.",
         type: "textarea"
     },
-    // {
-    //     question: "List the table of contents for your project.",
-    //     type: "textarea"
-    // },
     {
         question: "Provide the installation instructions for your project.",
         type: "textarea"
@@ -48,9 +45,9 @@ const questions = [
 console.log(questions);
 
 // TODO: Create a function to write README file
-const fs = require('fs');
+// const fs = require('fs');
 
-function writeToFile(fileName, data) {
+async function writeToFile(fileName, data) {
     const { title, description, installation, usage, license, contributing, tests, questions } = data;
  
     const readmeContent = `
@@ -95,23 +92,10 @@ ${questions}
     });
 }
 
-// To create a README file:
-// const data = {
-//     title: "My Project",
-//     description: "This is a description of my project.",
-//     tableOfContents: "- [Description](#description)\n- [Installation](#installation)\n- [Usage](#usage)\n- [License](#license)\n- [Contributing](#contributing)\n- [Tests](#tests)\n- [Questions](#questions)",
-//     installation: "Here are the installation instructions.",
-//     usage: "Here is how you use the project.",
-//     license: "MIT",
-//     contributing: "Here is how you can contribute to the project.",
-//     tests: "Here are the tests for the project.",
-//     questions: "If you have any questions, you can contact me at [email@example.com](mailto:email@example.com)."
-// };
 
-// writeToFile('README.md', data);
 
 // TODO: Create a function to initialize app
-function init() {
+async function init() {
     inquirer.prompt([
         {
             type: 'input',
@@ -166,6 +150,20 @@ function init() {
     });
 }
 
-
 // Function call to initialize app
 init();
+
+// To create a README file:
+// const data = {
+//     title: "My Project",
+//     description: "This is a description of my project.",
+//     tableOfContents: "- [Description](#description)\n- [Installation](#installation)\n- [Usage](#usage)\n- [License](#license)\n- [Contributing](#contributing)\n- [Tests](#tests)\n- [Questions](#questions)",
+//     installation: "Here are the installation instructions.",
+//     usage: "Here is how you use the project.",
+//     license: "MIT",
+//     contributing: "Here is how you can contribute to the project.",
+//     tests: "Here are the tests for the project.",
+//     questions: "If you have any questions, you can contact me at [email@example.com](mailto:email@example.com)."
+// };
+
+// writeToFile('README.md', data);
