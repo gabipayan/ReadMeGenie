@@ -7,6 +7,16 @@ import fs from 'fs';
 // TODO: Create an array of questions for user input
 const questions = [
     {
+        message: "What is your Github username?",
+        name: "username",
+        type: "text"
+    },
+    {
+        message: "What is your email address?",
+        name: "email",
+        type: "text"
+    },
+    {
         message: "What is the title of your project?",
         name: "title",
         type: "text"
@@ -48,11 +58,14 @@ const questions = [
 // TODO: Create a function to write README file
 
 async function writeToFile(fileName, data) {
-    const { title, description, installation, usage, license, contributing, tests } = data;
+    const { username, email, title, description, installation, usage, license, contributing, tests } = data;
     console.log(data);
  
     const readmeContent = `
-# ${title}
+// # ${username}
+// # ${email}
+
+    # ${title}
 
 ## Description
 ${description}
