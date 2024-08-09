@@ -31,7 +31,7 @@ npm install
 node index.js
 ```
 
-* Refer to the next video that includes how to run it from the terminal [Terminal Mock](https://www.loom.com/share/da451faf1b504511ae0abc4e75457d86?sid=453213a9-7e63-4067-8e52-db51684bfcfd)
+* Refer to the next video that includes how to run it from the terminal [Terminal Mock](https://www.loom.com/share/9cd67a230d3241dcbcddf00126d08fb0?sid=e5766613-91ea-4dac-b23c-8ff0ff60a17b)
 
 
 ## Contributing
