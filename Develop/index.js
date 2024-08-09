@@ -62,9 +62,6 @@ async function writeToFile(fileName, data) {
     console.log(data);
  
     const readmeContent = `
-// # ${username}
-// # ${email}
-
     # ${title}
 
 ## Description
@@ -92,6 +89,11 @@ ${contributing}
 
 ## Tests
 ${tests}
+
+## Questions
+For any questions, please contact me using the information below:
+- GitHub: [${username}](https://github.com/${username})
+- Email: [${email}](${email})
 
 `;
 
